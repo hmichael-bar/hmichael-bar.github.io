@@ -158,9 +158,8 @@ def main():
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="628">
 <meta name="twitter:card" content="summary_large_image">
-<meta http-equiv="refresh" content="0; url={target}">
 <link rel="canonical" href="{url}">
-</head><body><p><a href="{target}">Open the portfolio</a></p></body></html>
+</head><body><p><a href="{target}">Open the portfolio</a></p><script>location.replace("{target}")</script></body></html>
 ''', encoding="utf-8")
         print("wrote", out.relative_to(SITE), "and", (SHARE / f"{name}.html").relative_to(SITE))
 
