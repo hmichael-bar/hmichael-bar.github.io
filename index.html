@@ -213,6 +213,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
     <li><a href="#network"><span class="tag">FC-04</span><span class="t">Cyprus shell-company network map</span></a></li>
     <li><a href="#typologies"><span class="tag">FC-05</span><span class="t">Sanctions evasion typology reports</span></a></li>
     <li><a href="#media"><span class="tag">FC-06</span><span class="t">Adverse media screener (EN + AR)</span></a></li>
+    <li><a href="#threathunt"><span class="tag">FC-07</span><span class="t">Threat hunt: password spray to BEC</span></a></li>
   </ol>
 </nav>
 
@@ -221,7 +222,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
   <div class="file-head"><span class="docket">FC-01 · SANCTIONS / OFAC</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/01-sanctions-screening">View code</a><span class="status">Complete</span></span></div>
   <div class="file-body">
     <h3>OFAC sanctions screening engine with Arabic-name matching</h3>
-    <p class="q"><b>Problem:</b> Arabic na</span></div> the SDN list are spelled many ways. Exact matching misses real hits, and loose fuzzy matching floods analysts with false positives.</p>
+    <p class="q"><b>Problem:</b> Arabic names on the SDN list are spelled many ways. Exact matching misses real hits, and loose fuzzy matching floods analysts with false positives.</p>
     <p>A name-screening engine run against the live Treasury SDN and Consolidated lists. It scores each candidate match from 0 to 100, gives the reasons, and suggests one of the three L1 dispositions: true match, potential match (escalate) or false positive. A dedicated Arabic module treats <i>Moammar el-Gaddafi</i>, <i>Muammar QADHAFI</i> and <span class="ar-text">معمر القذافي</span> as the same name.</p>
     <div class="stats">
       <div class="stat"><span class="n">41,396</span><span class="l">searchable SDN and alias names</span></div>
@@ -264,7 +265,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
   <div class="file-head"><span class="docket">FC-02 · AML / TRANSACTION MONITORING</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/03-transaction-monitoring">View code</a><span class="status">Complete</span></span></div>
   <div class="file-body">
     <h3>Transaction monitoring simulator and alert workbench</h3>
-    <p class="q"><b>Problem:</b> Monitoring progra</span></div>t catch real typologies without burying the team in false positives. Tuning is a trade-off you have to show with numbers.</p>
+    <p class="q"><b>Problem:</b> Monitoring programs need rules that catch real typologies without burying the team in false positives. Tuning is a trade-off you have to show with numbers.</p>
     <p>A fictional bank with 500 KYC-profiled customers and nearly 58,000 transactions over six months. Eight laundering typologies are hidden in the data. Ten detection rules and an Isolation Forest model hunt for them. An analyst workbench opens each alert with the customer profile and timeline, and records a disposition with an audit trail.</p>
     <div class="stats">
       <div class="stat"><span class="n">98%</span><span class="l">of seeded bad actors caught (55 of 56)</span></div>
@@ -311,7 +312,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
   <div class="file-head"><span class="docket">FC-03 · SAR WRITING</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/04-sar-narratives">View code</a><span class="status">Complete</span></span></div>
   <div class="file-body">
     <h3>Suspicious activity report narratives</h3>
-    <p>Three fictional SAR narratives written to FinCEN's</span></div>nce: who, what, when, where, why and how, in chronological order, facts only. Two come from alerts in FC-02 (structuring and a money-mule network). The third covers trade-based laundering through a Gulf free-zone front company. Each one includes the red flags, the investigation steps and supporting transaction tables. A one-page guide covers how to write a narrative and the common mistakes.</p>
+    <p>Three fictional SAR narratives written to FinCEN's guidance: who, what, when, where, why and how, in chronological order, facts only. Two come from alerts in FC-02 (structuring and a money-mule network). The third covers trade-based laundering through a Gulf free-zone front company. Each one includes the red flags, the investigation steps and supporting transaction tables. A one-page guide covers how to write a narrative and the common mistakes.</p>
     <div>
       <div class="label">Exhibits</div>
       <div class="exhibits">
@@ -330,7 +331,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
   <div class="file-head"><span class="docket">FC-04 · OSINT / EDD</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/02-shell-network-map">View code</a><span class="status">Complete</span></span></div>
   <div class="file-body">
     <h3>The Cyprus corridor: shell-company network map</h3>
-    <p class="q"><b>Question:</b> Who builds and ru</span></div> offshore structures that route through Cyprus and Malta, and where do they touch sanctioned parties?</p>
+    <p class="q"><b>Question:</b> Who builds and runs the offshore structures that route through Cyprus and Malta, and where do they touch sanctioned parties?</p>
     <p>A graph built from the ICIJ Offshore Leaks database (Panama, Paradise, Pandora and Bahamas leaks), screened against about 600,000 sanctions and PEP records. It surfaces hub intermediaries, shared-address clusters, nominee directors and circular ownership. The designated Vassiliades / Ledra network (US/UK, April 2023) appears in four leak sets and the Malta registry, tied to 278 companies.</p>
     <div class="stats">
       <div class="stat"><span class="n">43,065</span><span class="l">nodes in the Cyprus subgraph</span></div>
@@ -356,7 +357,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
   <div class="file-head"><span class="docket">FC-05 · SANCTIONS INTELLIGENCE</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/05-typology-reports">View code</a><span class="status">Complete</span></span></div>
   <div class="file-body">
     <h3>Sanctions evasion typology reports</h3>
-    <p>Three briefings written the way an FIU or sanctions-adv</span></div>team briefs compliance staff: how the scheme works, red flags, real cases, and detection controls. Every claim is cited to OFAC, FinCEN, DOJ, FATF, the UN or specialist research, and checked in November 2026.</p>
+    <p>Three briefings written the way an FIU or sanctions-advisory team briefs compliance staff: how the scheme works, red flags, real cases, and detection controls. Every claim is cited to OFAC, FinCEN, DOJ, FATF, the UN or specialist research, and checked in November 2026.</p>
     <div>
       <div class="label">Reports</div>
       <div class="exhibits">
@@ -380,7 +381,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
   <div class="file-head"><span class="docket">FC-06 · KYC / EDD</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/06-adverse-media-screener">View code</a><span class="status">Complete</span></span></div>
   <div class="file-body">
     <h3>Adverse media screener in English and Arabic</h3>
-    <p class="q"><b>Problem:</b> Reporting on Gulf, Levant</span></div>orth African subjects often appears first, or only, in Arabic. English-only negative-news checks miss it.</p>
+    <p class="q"><b>Problem:</b> Reporting on Gulf, Levant and North African subjects often appears first, or only, in Arabic. English-only negative-news checks miss it.</p>
     <p>Searches GDELT and Google News in both languages. Tags stories across six financial-crime categories, works out the legal stage (allegation, charge or conviction/designation), scores severity, merges syndicated copies, and writes a sourced rating of high, medium, low or none.</p>
     <div class="stats">
       <div class="stat"><span class="n">HIGH</span><span class="l">Bank Melli Iran: 30 adverse stories, 8 found only in Arabic</span></div>
@@ -396,6 +397,30 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
       </div>
     </div>
     <div class="tags"><span>Python</span><span>GDELT</span><span>Arabic NLP</span><span>rapidfuzz</span><span>FATF R.10</span></div>
+  </div>
+</article>
+
+<!-- FC-07 -->
+<article class="file" id="threathunt">
+  <div class="file-head"><span class="docket">FC-07 · CYBER THREAT HUNTING</span><span class="head-r"><a class="code-link" href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/08-threat-hunt-bec">View code</a><span class="status">Complete</span></span></div>
+  <div class="file-body">
+    <h3>Threat hunt: password spray to business email compromise</h3>
+    <p class="q"><b>Problem:</b> A slow password spray tries one password per account across hundreds of accounts, so it never trips a lockout. If it lands on an account without MFA, it can end in invoice fraud.</p>
+    <p>Fourteen days of synthetic Microsoft Entra ID sign-in and Microsoft 365 mailbox logs for a fictional 270-person company, with one attack planted inside. Five hunts, written in KQL for Microsoft Sentinel and mirrored in Python, trace the spray, the guessed passwords, a legacy-auth sign-in that bypassed MFA, a hidden inbox rule and fake bank-detail emails to customers. Ends with a customer-style incident report: timeline, scope, remediation and MITRE ATT&amp;CK mapping.</p>
+    <div class="stats">
+      <div class="stat"><span class="n">5/5</span><span class="l">Spray IPs found</span></div>
+      <div class="stat"><span class="n">3/3</span><span class="l">Accounts with guessed passwords identified</span></div>
+      <div class="stat"><span class="n">0</span><span class="l">False positives (real travellers and a normal inbox rule left alone)</span></div>
+    </div>
+    <div>
+      <div class="label">Exhibits</div>
+      <div class="exhibits">
+        <a href="https://github.com/hmichael-bar/fincrime-portfolio/blob/main/08-threat-hunt-bec/REPORT.md">Incident report</a>
+        <a href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/08-threat-hunt-bec/kql">KQL hunts</a>
+        <a href="https://github.com/hmichael-bar/fincrime-portfolio/tree/main/08-threat-hunt-bec/sigma">Sigma rules</a>
+      </div>
+    </div>
+    <div class="tags"><span>KQL</span><span>Microsoft Sentinel</span><span>Entra ID</span><span>Microsoft 365</span><span>Sigma</span><span>MITRE ATT&amp;CK</span><span>Python</span></div>
   </div>
 </article>
 
@@ -416,7 +441,7 @@ details.writeup .md blockquote{margin:0;padding-left:12px;border-left:3px solid 
     <div><h3>AML / BSA</h3><p>Transaction monitoring rules and tuning, alert disposition, SAR narratives, CTR vs SAR.</p></div>
     <div><h3>KYC / EDD</h3><p>Adverse media in English and Arabic, beneficial ownership, PEP and leak-data research.</p></div>
     <div><h3>OSINT</h3><p>Corporate registries, maritime tracking, geolocation, network analysis.</p></div>
-    <div><h3>Tools</h3><p>Python, pandas, networkx, scikit-learn, Streamlit, Excel.</p></div>
+    <div><h3>Tools</h3><p>Python, pandas, networkx, scikit-learn, Streamlit, KQL, Microsoft Sentinel, Sigma, Excel.</p></div>
     <div><h3>Languages</h3><p>Native Arabic across three dialect groups, and native Hebrew. Arabic-script research without translation.</p></div>
   </div>
 </section>
